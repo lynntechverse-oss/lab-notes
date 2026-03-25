@@ -8,6 +8,10 @@ on:
       - completed
   workflow_dispatch:
 
+concurrency:
+  group: brands-batch-2
+  cancel-in-progress: false
+
 jobs:
   run-scraper:
     runs-on: ubuntu-latest

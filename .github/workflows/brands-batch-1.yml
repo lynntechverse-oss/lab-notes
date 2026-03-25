@@ -5,6 +5,10 @@ on:
     - cron: '0 0 * * *'   # 12:00 AM UTC daily
   workflow_dispatch:
 
+concurrency:
+  group: brands-batch-1
+  cancel-in-progress: false
+
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
